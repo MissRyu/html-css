@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>css 선택자</title>
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Pen+Script" rel="stylesheet">
+    <style>
+        * {margin:0; padding: 0;} /* 전체선택자 */
+        a {text-decoration: none;}
+        ul {list-style: none;}
+        body {font-family: 'Nanum Gothic', sans-serif;} /* 태그선택자 */
+        #gnb {font-family: 'Nanum Pen Script', cursive;} /* 아이디선택자 */
+        body, html {width: 100%; height: 100%;} /* 복합선택자 */
+        .hd {width: 100%; height: 70px; position: fixed; top:0; left: 0; background: rgba(0,0,0,0.75); z-index: 99;} /* 클래스선택자 */
+        .hdWrap {width: 1200px; margin: 0 auto;}
+        .hdWrap > #logo {display: block; width: 50px; height: 50px; float: left; border-radius: 26px; overflow: hidden; margin-top: 10px;} /* 자식선택자 */
+        .hd #gnb {float: right; width: 500px; margin-top: 5px;} /* 후손선택자 */
+        #gnb li {float: left; width: 100px; line-height: 50px;}
+        #gnb a {display: block; color: #fff; font-size: 20px; transition: 0.4s; text-align: center;}
+        #gnb a:link {color: #fff;} /* 상태선택자 */
+        #gnb a:visited {color: #fff;}
+        #gnb a:hover {color: #aee; font-size: 24px;}
+        #gnb a:active {color: pink;}
+        #gnb a:before, #gnb a:after  {content: ""; display: block; width: 100px; height: 4px; background-color: transparent;}  /* 가상선택자 after, before*/
+        #gnb a:hover::after, #gnb a:hover::before {background: #666;} 
+        #gnb li:first-child a{color: darkturquoise;}
+        #gnb li:nth-child(2) a{color: deeppink;}
+        #gnb li:last-child a{color: lawngreen;}
+        .page {width: 100%; height: 100%; background-repeat: no-repeat; background-size: cover;}
+        .pageWrap {width: 1200px; margin: 0 auto; position: relative;}
+        .pageTitle {padding-top: 90px;}
+        #page1 {background-image: url("./images/bg1.jpg"); background-attachment: fixed;}
+        #page2 {background-color: #000;}
+        .titleBox {width: 900px; margin: 0 auto; color: #fff; text-align: center; padding-top: 220px;}
+        .tit1 {line-height: 150px;}
+        .com1 {line-height: 2; font-size: 14px;}
+        .more {display: block; width: 150px; line-height: 60px; clear: both; margin: 69px auto; text-align: center; margin-top: 120px; color: #fff; background-color: #1ac;}
+        .grid {width: 100%; padding-top: 50px;}
+        .grid .item {float: left; margin-right: 150px; width: 300px; height: 420px; background-color: #fff; box-shadow: 0px 0px 10px #666; border-radius: 10px; overflow: hidden;}
+        .grid .item[data-type="item3"] {margin-right: 0;}
+        .grid .item a {color: #333;}
+        .gridTit {padding-left: 15px; line-height: 3;}
+        .gridCom {padding: 15px; height: 90px;}
+        .detail {text-align: right; padding-right: 15px; font-size: 14px; color: navy;}
+        #tab {width: 1200px; padding-top: 50px;}
+        .tabBtnBox {width: 1200px;}
+        .tabBtn {float: left; padding: 10px;}
+        .tabBtn a {display: block; width: 100px; line-height: 36px; background: #333; color: #fff; text-align: center;}
+        .tabCon {display: none; padding-top: 120px;}
+        .tabCon:target {display: block;}
+        
+        .ft {width: 100%; height: 100px; background: #222; border-top: 5px soild #999; color: #fff;}
+        .ftWrpa {width: 1200px; margin: 0 auto;}
+        #fnb {width: 100%; height: 40px; background: #000;}
+        #fnb li {float: left; padding: 0 20px;}
+        #fnb li a {display: block; color: #eee; font-size: 12px; line-height: 40px;}
+        .copyright {line-height: 60px; text-align: center;}
+     </style>
+</head>
+<body>
+    <header class="hd">
+       <div class="hdWrap">
+           <a href="" id="logo">
+               <img src="http://placehold.it/50x50" alt="로고">
+           </a>
+           <nav id="gnb">
+               <ul>
+                   <li><a href="#page1">Intro</a></li>
+                   <li><a href="#page2">Working</a></li>
+                   <li><a href="#page3">Portfolio</a></li>
+                   <li><a href="#page4">Community</a></li>
+                   <li><a href="#page5">Contact</a></li>
+               </ul>
+           </nav>
+       </div>
+    </header>
+   
+    <div class="page" id="page1">
+        <section class="pageWrap">
+            <div class="titleBox">
+                <h2 class="tit1">여기는 배너에 대한 제목입니다.</h2>
+                <p class="com1">여기는 설명이 들어가는곳.</p>
+            </div>
+            <a href="" class="more">MORE</a>
+        </section>
+    </div>
+    <div class="page" id="page2">
+        <section class="pageWrap">
+            <h2 class="pageTitle" style="text-align: center;">두 번째 페이지</h2>
+            <ul class="grid">
+                <li class="item" data-type="item1">
+                    <a href="">
+                        <img src="http://placehold.it/300x200" alt="">
+                        <h3 class="gridTit">상품제목1</h3>
+                        <p class="gridCom">상품설명1</p>
+                        <p class="detail">더보기</p>
+                    </a>
+                </li>
+                <li class="item" data-type="item2">
+                       <a href="">
+                        <img src="http://placehold.it/300x200" alt="">
+                        <h3 class="gridTit">상품제목2</h3>
+                        <p class="gridCom">상품설명2</p>
+                        <p class="detail">더보기</p>
+                    </a>
+                </li>
+                <li class="item" data-type="item3">
+                    <a href="">
+                        <img src="http://placehold.it/300x200" alt="">
+                        <h3 class="gridTit">상품제목3</h3>
+                        <p class="gridCom">상품설명3</p>
+                        <p class="detail">더보기</p>
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </div>
+    <div class="page" id="page3">
+        <section class="pageWrap">
+            <h2 class="pageTitle">세 번째 페이지</h2>
+            <nav id="tab">
+                <ul class="tabBtnBox">
+                    <li class="tabBtn"><a href="#tabCon1">탭1</a></li>
+                    <li class="tabBtn"><a href="#tabCon2">탭2</a></li>
+                    <li class="tabBtn"><a href="#tabCon3">탭3</a></li>
+                    <li class="tabBtn"><a href="#tabCon4">탭4</a></li>
+                </ul>
+                <ul class="tabConBox">
+                    <li class="tabCon" id="tabCon1">
+                        <img src="http://placehold.it/1200x500/333/fff" alt="">
+                    </li>
+                    <li class="tabCon" id="tabCon2">
+                        <img src="http://placehold.it/1200x500/36e/fff" alt="">
+                    </li>
+                    <li class="tabCon" id="tabCon3">
+                        <img src="http://placehold.it/1200x500/ec2/fff" alt="">
+                    </li>
+                    <li class="tabCon" id="tabCon4">
+                        <img src="http://placehold.it/1200x500/ace/fff" alt="">
+                    </li>
+                </ul>
+            </nav>
+        </section>
+    </div>
+    <div class="page" id="page4">
+        <section class="pageWrap">
+            <h2 class="pageTitle">네 번째 페이지</h2>
+        </section>
+    </div>
+    <div class="page" id="page5">
+        <section class="pageWrap">
+            <h2 class="pageTitle">다섯 번째 페이지</h2>
+        </section>
+    </div>
+    
+    <footer class="ft">
+        <div class="ftWrap">
+            <nav id="fnb">
+                <ul>
+                    <li><a href="">고객센터</a></li>
+                    <li><a href="">개인정보취급방침</a></li>
+                    <li><a href="">사이트맵</a></li>
+                    <li><a href="">관리자에게</a></li>
+                </ul>
+            </nav>
+            <div class="copyright">
+                <p class="copy">All copyrights by Sil @2018</p>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>
