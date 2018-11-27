@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS 속성 - 박스 관련 속성</title>
+	<style>
+		/*	박스 관련 속성 : width(폭), height(높이), padding(안여백), border(태두리), margin(바깥여백), display(표시), overflow(넘침), box-sizing(크기기준), opacity(불투명도), float(배치흐름), clear(흐름해제)*/
+		* {margin: 0; padding: 0;}
+		a {text-decoration: none;}
+		.row {width: 400px; height: 400px; overflow: hidden; position: relative; margin: 0 auto;}
+		.wrap {width: 336px; height: 336px; margin: 20px auto;}
+		.box {width: 30px; height: 30px; display: block; padding: 20px; margin: 5px; float: left; border: 2px solid #000;}
+		.bord {border-radius: 10px}
+		.opa {opacity: 0.2;}
+		.siz {box-sizing: border-box;}
+		.non {display: none;}
+	</style>
+</head>
+<body>
+<!-- div.row>div.wrap>a.box*4 -->
+<div class="row">
+	<div class="wrap">
+		<a href="" class="box siz">가</a>
+		<a href="" class="box opa">나</a>
+		<a href="" class="box non">다</a>
+		<a href="" class="box bord">라</a>
+	</div>
+</div>
+</body>
+</html>
