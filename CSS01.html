@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>css 속성 - font 관련 속성</title>
+     <style>
+     @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR');
+     @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic');
+     @import url('https://fonts.googleapis.com/css?family=Nanum+Pen+Script');
+     @import url('https://fonts.googleapis.com/css?family=Do+Hyeon');
+         
+    /*font-family: 'Do Hyeon', sans-serif;
+     font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-family: 'Nanum Pen Script', cursive;*/
+    
+    /* 웹의 기본 폰트 -  sans-serif : 고딕계열, serif : 명조계열, cursive : 궁서계열, monospace : 가로세율이 같은 폰트, fantasy : 장식용계열 */
+         
+    body, html {font-family: 'Nanum Gothic', sans-serif; font-size: 14px;}
+    .font1{font-family: 'Noto Sans KR', sans-serif;}
+    .font2{font-family: 'Do Hyeon', sans-serif;}
+    .font3{font-family: 'Nanum Pen Script', cursive;}
+	.em1 {font-size: 3.5em;}
+	.per1 {font-size: 200%;}
+	.px1 {font-size: 20px;}	 
+	.pt1 {font-size: 20pt;}		 
+	.vh {font-size: 5vh;} /* 창의높이 : 창의 5% 크기, 높이*/	 
+	.vw {font-size: 5vw;} /* 창의 5% 크기, 가로 */	
+	.rem {font-size: 3.5rem;}
+	.wt1 {font-weight: 900;}
+	.wt2 {font-weight: bold;}
+	.italic1 {font-style: italic;}
+ 	.variant1{font-variant: small-caps;} /* 영문 대문자를 소문자 크기로 정렬*/
+	.ht1 {line-height: 1.6;}
+	.ht2 {line-height: 100px;}
+	.fnt1 {font:bold italic 20pt/1.6 "돋움","dotum", sans-serif;} /* 폰트통합속성 */
+		  /* weight style size/line-height family*/
+	.fnt1 {font-size: 14pt;}
+	.fnt2 {font: lighter 24px/1.2 'Nanum Pen Script', cursive;}	 
+    </style>
+</head>
+<body>
+    <p class="font1">진실</p>
+    <p class="font2">진실</p>
+    <p class="font3">진실</p>
+    <p class="em1">진실</p>
+    <p class="per1">진실</p>
+    <p class="px1">진실</p>
+    <p class="pt1">진실</p>
+    <p class="vh">진실</p>
+    <p class="vw">진실</p>
+    <p class="rem">진실</p>
+    <p class="wt1">진실</p>
+    <p class="wt2">진실</p>
+    <p class="italic1">Jinsil</p>
+    <p class="variant1">Jinsil</p>
+    <p class="ht1">진실</p>
+    <p class="ht2">진실</p>
+    <p class="fnt1">진실</p>
+    <p class="fnt2">진실</p>
+    <div class="font4"><img src="./images/font4.png" alt=""></div>
+</body>
+</html>

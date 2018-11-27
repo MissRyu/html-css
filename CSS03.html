@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS 속성 - 배경 관련 속성</title>
+	<style>
+		* {margin: 0; padding: 0;}
+		body,html {width: 100%; height: 100%;}
+		h1 {text-align: center; line-height: 300px;}
+		.page {clear: both; height: 100%; width: 100%; overflow: hidden;}
+		.back1 {background: url('./images/ex1.png') bottom / 50% no-repeat fixed, #09c;}
+		/* image positon/size repeat attachment*/
+		.back2 {background-color: #a43; color: #fff;}
+		.back3 {background-image: url('./images/ex2.png'), url('./images/img2.jpg'); background-repeat: no-repeat, repeat; background-position: center center;}
+		.back4 {background-image: url('./images/bg3.jpg'); background-size: cover; background-attachment: scroll;}
+		.back5 {background:rgba(128, 180, 10, 0.8);}
+		.back6 {background:hsl(240, 40%, 30%);}
+		.back7 {background: linear-gradient(-90deg, red, yellow);}
+	</style>
+</head>
+<body>
+	<article class="page back1">
+		<h1>배경 속성 : background 통합 속성</h1>
+	</article>
+	<article class="page back2">
+		<h1>배경 색상 속성 : background-color</h1>
+	</article>
+	<article class="page back3">
+		<h1>배경 이미지 속성 : background-image</h1>
+		<h1>배경 반복 속성 : background-repeat</h1>
+		<h1>배경 위치 속성 : background-position</h1>
+	</article>
+	<article class="page back4">
+		<h1>배경 크키 속성 : background-size</h1>
+		<h1>배경 스크를 속성 : background-attachment</h1>
+	</article>
+	<article class="page back5"></article>
+	<article class="page back6"></article>
+	<article class="page back7"></article>
+</body>
+</html>
