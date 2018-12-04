@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>자바스크립트 폼 컨트롤 - 로그인 폼</title>
+	<!-- 폼 유효성 검증 -->
+	<script>
+	</script>
+</head>
+<body>
+	<h2>로그인</h2>
+	<form id="login" name="login">
+		<fieldset>
+			<label for="m_id">아이디 : </label>
+			<input type="text" name="m_id" id="m_id" placeholder="아이디 입력" pattern="[A-Za-z0-9]{4,10}" autofocus required>
+			<br>
+			<br>
+			<label for="m_pw">비밀번호 : </label>
+			<input type="password" name="m_pw" id="m_id" placeholder="비밀번호 입력" pattern="[A-Za-z0-9]{4,10}" required>
+			<br>
+			<br>
+			<input type="submit" value="로그인">
+			&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="reset" value="취소">
+		</fieldset>
+	</form>
+</body>
+</html>

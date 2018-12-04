@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>자바스크립트 - 반복문</title>
+	<script>
+	var jum=[90,100,85,70,80,95];
+	   //jum=[0] jum=[1]
+	   // i=i+1, i+=1, i++ 3가지 같음
+	var tot=0, avg;
+//	for(초기화;조건식;증감식){반복실행구문;}
+//		 1      2     3         a
+//		 1부터 시작 2이 만족하는 동안 a를 반복실행하되, 3이 증감된다.
+	for(var i=0; i<jum.length; i++){
+		document.write("<br>번호:"+(i+1)+", 점수:"+jum[i]);
+		tot+=jum[i]; // tot=tot+jum[i];  누산
+		console.log(tot);
+	}
+	avg=tot/jum.length;
+	document.write("<br>총점:"+tot+", 평균:"+avg);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
