@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>여기는 제목입니다.</title>
+<style>
+	span { font-size: 30pt;   }
+	.redtext   { color : #f00;   }
+	.italictext { font-style: italic;   }
+</style>
+<!--<script src="jquery.js"></script>-->
+<!--<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>-->
+<script src="http://code.jquery.com/jquery-latest.js"></script> <!-- 최신버전으로 불러옴 -->
+
+<!-- $ = jQuery -->
+<!--선택자일경우만 "", 객체,숫자,변수인경우 "" X -->
+<script>
+$(document).ready(function(){
+	$("span").addClass("redtext"); // 명령 (span에 redtext 클래스를 추가하라)
+	var len=$("span").length;
+});
+</script>
+</head>
+<body>
+<span> simple </span>
+<script>
+	$("span").addClass("italictext");
+</script>
+</body>
+</html>

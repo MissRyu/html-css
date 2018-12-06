@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>조건에 만족하는 첫 번째와 마지막 엘리먼트에 스타일을 적용하기-:first, :last</title>
+<style>
+   table { table-layout:auto;   width: 75%;}
+   td { color: blue;   font-weight: bold; }
+   .selectedstyle {color: red;  font-size: 20pt;   background-color: pink;  }
+</style>
+<!--<script src="https://code.jquery.com/jquery-3.3.1.min.js">  최신버전 링크 </script>-->
+<script src="http://code.jquery.com/jquery-latest.js"></script> <!-- 최신버전으로 불러옴 -->
+<script>
+$(document).ready(function(){
+	// td태그 중에 전체에서 첫 번째 td태그만 선택하여, ,selectedstyle를 추가
+	$("td:first").addClass("selectedstyle");
+	// td태그 중에 전체에서 마지막 td태그만 선택하여, ,selectedstyle를 추가
+	$("td:last").addClass("selectedstyle");	
+});
+</script>
+</head>
+<body>
+   <table>
+      <tr><td>one</td></tr>       <tr><td>two</td></tr>       <tr><td>three</td></tr>
+      <tr><td>four</td></tr>       <tr><td>five</td></tr>
+   </table>
+   <div class="result1"></div><div class="result2"></div>
+</body>
+</html>

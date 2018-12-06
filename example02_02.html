@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>엘리먼트에 접근해서 스타일 지정하기-“element”, “#id”, “.class</title>
+<style type="text/css">
+   .spotlight {   background-color: #ff0   }
+   .redtext   {   color: #f00   }
+   .largetext {   font-size: 30pt   }
+   .italictext{   font-style: italic;   }
+</style>
+<script src="http://code.jquery.com/jquery-latest.js"></script> <!-- 최신버전으로 불러옴 -->
+<script>
+$(document).ready(function(){
+	$("span").addClass("redtext"); // $("태그선택자").메소드(");
+	$("div").addClass("spotlight");
+	$("#id").addClass("largetext");
+	$(".text1").addClass("italictext");
+	$("#text2").click(function(){
+		$("span#text2.text1").css("border","2px solid #000").css("padding","10px"); 		  
+	})
+//	$("span#text2.text1").css("border","2px solid #000").css("padding","10px"); //메서드 체이닝 
+});
+</script>
+</head>
+<body>
+   <span id="text1">simple</span>
+   <div  class="text1">jQuery</div>   
+   <span id="text2" class="text1">basic</span>
+   <div  id="text3">example</div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>모든 엘리먼트에 스타일을 적용하고 인접한 형제를 노드로 추가하기-“*”, “prev + next”</title>
+<style type="text/css">
+.textstyle { font-size:14pt; line-height: 20pt; margin:10px;  }
+</style>
+<!--<script src="https://code.jquery.com/jquery-3.3.1.min.js">  최신버전 링크 </script>-->
+<script src="http://code.jquery.com/jquery-latest.js"></script> <!-- 최신버전으로 불러옴 -->
+<script>
+$(document).ready(function(){
+	// 전체 엘리먼트(태그)에 .textstyle를 추가
+	$("*").addClass("textstyle");
+	
+	// em태그에 동생에 해당하는 엘리먼트(태그)중의 a태그의 텍스트를 .result1에 추가
+	$("em ~ a").css("background","yellow").each(function(){ // em ~ a (em 다음의 모든 a)
+		$(".result1").append($(this).text() + "<br>");
+	});
+	
+	// em태그의 바로 밑에 a태그 동생 하나만을 선택하여 글자색을 빨강색으로 변경
+	$("em + a").css("color","red").each(function(){
+		$(".result2").append($(this).text() + "<br>");
+	}); // em + a (em 다음의 하나만)
+});
+</script>
+</head>
+<body>
+   <em> one  </em>   <a> two  </a>   <a> three  </a>   <b> four </b>   <a> five </a>   <em> six </em>
+   <a> seven </a>
+   <hr>
+   <div>
+      <span> prev ~ nextAll로 검색된 엘리먼트 : </span>
+      <span class="result1"></span>
+      <span> prev + next로 검색된 엘리먼트 : </span>
+      <span class="result2"></span>
+   </div>      
+</body>
+</html>

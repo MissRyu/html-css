@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>인접한 자손 엘리먼트를 노드로 추가하기</title>
+<style type="text/css">
+em { font-size:20pt; line-height: 20pt;   margin:20px;   color:blue;  }
+</style>
+<!--<script src="https://code.jquery.com/jquery-3.3.1.min.js">  최신버전 링크 </script>-->
+<script src="http://code.jquery.com/jquery-latest.js"></script> <!-- 최신버전으로 불러옴 -->
+<script>
+$(document).ready(function(){	
+	// .result1에는 p태그의 후손 중에서 em을 선택하여 텍스트를 가져와 출력
+	$("p em").css("background","yellow").each(function(){
+		$(".result1").append($(this).text() + "<br>");
+	});
+
+	// .result2에는 div태그의 자식 중에서 em을 선택하여 텍스트를 가져와 출력
+	$("div > em").css("background","pink").each(function(){
+		$(".result2").append($(this).text() + "<br>");
+	});
+	
+	$("div span > em").css({"background":"red","color":"#fff"}).each(function(){
+		$(".result3").append($(this).text() + "<br>");
+	});
+});
+
+</script>
+</head>
+<body>
+   <p>
+      <em> one  </em>      <em> two  </em>   <span> <em> three </em> </span>
+   </p>
+   <div>
+      <em> four  </em>      <span> <em> five  </em> </span>       <em>six</em> 
+    </div>
+<hr>
+   <div>    <span> ancestor descendant로 검색된 엘리먼트 : </span>
+      <span class="result1"></span>
+   </div>
+   <div>    <span> parent &gt; child로 검색된 엘리먼트 : </span>
+      <span class="result2"></span>
+   </div>
+    <div>    <span> parent &gt; child로 검색된 엘리먼트 : </span>
+      <span class="result3"></span>
+   </div>
+</body>
+</html>

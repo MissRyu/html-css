@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> n번째 엘리먼트 이후 혹은 이전에 위치한 엘리먼트에 스타일 해제하기-:gt(n),:lt(n)</title>
+<style>
+   table {   table-layout:auto;  width: 75%;}    
+   .textstyle { color: blue;   font-weight: bold; background-color: pink}  
+}
+</style>
+<!--<script src="https://code.jquery.com/jquery-3.3.1.min.js">  최신버전 링크 </script>-->
+<script src="http://code.jquery.com/jquery-latest.js"></script> <!-- 최신버전으로 불러옴 -->
+<script>
+	$(document).ready(function(){
+		$("td").addClass("textstyle");
+		//$("td:gt(3)").removeClass("textstyle");
+		$("td:lt(3)").removeClass("textstyle");
+	});
+</script>
+</head>
+<body>
+   <table>
+      <tr><td>zero</td><td>one</td><td>two</td></tr>
+      <tr><td>three</td><td>four</td><td>five</td></tr>
+   </table>
+</body>
+</html>

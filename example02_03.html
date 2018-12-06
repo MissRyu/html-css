@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>한 번에 다양한 엘리먼트에 접근하여 개수와 텍스트 얻기-“selector1, selector2, selectorN”</title>
+<!--<script src="https://code.jquery.com/jquery-3.3.1.min.js">  최신버전 링크 </script>-->
+<script src="http://code.jquery.com/jquery-latest.js"></script> <!-- 최신버전으로 불러옴 -->
+<script>
+ $(document).ready(function(){
+	 var rsText = "";
+	 var $sel = $("p, span, div.simpletext1");
+	 $sel.each(function(){
+		rsText = rsText + $(this).text() + ", "; 
+	 });
+	 $("div.result").text(rsText);
+//	 document.write(rsText);
+ });
+</script>
+</head>
+<body>
+   <span>simple</span>
+   <div class='simpletext1'>jQuery</div>
+   <div>basic</div>
+   <p>example</p>
+   <div class="result"></div>
+</body>
+</html>
