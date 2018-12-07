@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>엘리먼트의 어트리뷰트 값을 가져오고, 설정하기</title>
+<style>
+   img { padding:20px; } 
+   div { color: blue;  font-size: 30px  }
+</style>
+<!--<script src="https://code.jquery.com/jquery-3.3.1.min.js">  최신버전 링크 </script>-->
+<script src="http://code.jquery.com/jquery-latest.js"></script> <!-- 최신버전으로 불러옴 -->
+<script>
+	$(document).ready(function(){
+		// img의 첫번째 요소에 src속성에 고양이 이미지가 표시될 수 있도록 하고, title속성과 alt속성을 부여
+		$("img:eq(0)").attr("src","./images/img01.jpg").attr("title","귀여워").attr("alt","고양이");
+		
+		// img의 두번째 요소에 src속성에 고양이 이미지가 표시될 수 있도록 하고, title속성과 alt속성을 부여
+		$("img:eq(1)").attr("src","./images/img02.jpg").attr("title","못생겼어").attr("alt","강아지");
+		
+		// div요소에 두 이미지의 title 속성을 텍스트 형태로 출력
+		$("div").text($("img:eq(0)").attr("title") + "" + $("img:eq(1)").attr("title"));
+	});
+</script>
+</head>
+<body>
+<center>
+   <img /> <img />
+   <div><B> 어트리뷰트 연습</B></div>
+</center>
+</body>
+</html>

@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>엘리먼트의 어트리뷰트 값 제거하기</title>
+<!--<script src="https://code.jquery.com/jquery-3.3.1.min.js">  최신버전 링크 </script>-->
+<script src="http://code.jquery.com/jquery-latest.js"></script> <!-- 최신버전으로 불러옴 -->
+<script>
+
+	$(document).ready(function(){
+	// 각 button을 누르면 그 다음 요소인 img요소의 src속성을 제거하되, removeAttr메시드를 사용
+		
+		$("button").click(function(){
+			$(this).next("img").removeAttr("src"); // this와 함께 쓰는 next는 바로 다음
+		});
+		
+	});
+
+</script>
+<style>
+	
+</style>
+</head>
+<body>   
+<div class="imgFrame">
+ <button> 어트리뷰트 값 제거하기 1 </button> 
+ <img src="./images/img01.jpg" title="고양이" alt="puppy picture"> 
+</div> 
+
+<div class="imgFrame">
+ <button> 어트리뷰트 값 제거하기 2</button> 
+ <img src="./images/img02.jpg" title="강아지" alt="puppy picture"> 
+</div> 
+</body>
+</html>

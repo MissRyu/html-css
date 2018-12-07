@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>엘리먼트의 어트리뷰트 값을 콜백 함수에서 얻어 와서 설정하기</title>
+<!--<script src="https://code.jquery.com/jquery-3.3.1.min.js">  최신버전 링크 </script>-->
+<script src="http://code.jquery.com/jquery-latest.js"></script> <!-- 최신버전으로 불러옴 -->
+<script>
+	$(document).ready(function(){
+		// img 요소에 제시된 title 속성을 src속성으로.. data-txt 속성을 title과 alt속성으로 지정하되, width와 height 속성을 자유롭게 지정
+//		$("img:eq(0)").attr({"src":"./images/img01.jpg","title":"야옹이","width":"450px;","height":"300px;"});
+//		$("img:eq(1)").attr({"src":"./images/img02.jpg","title":"강아지","width":"450px;","height":"300px;"});
+//		$("img:eq(2)").attr({"src":"./images/img03.jpg","title":"멍멍이","width":"450px;","height":"300px;"});
+		
+		$("img").attr("width","400px");
+		$("img").attr("src", function(){
+			return this.title;
+		});
+		$("img").attr("title", function(){
+			return $(this).attr("data-txt");
+		});
+		$("img").attr("alt", function(){
+			return $(this).attr("data-txt");
+		});
+		$("img").attr("height","400px;");
+		
+	});
+
+</script>
+</head>
+<body>
+<center>
+   <img title="./images/img01.jpg" data-txt="야옹이"/>  
+   <img title="./images/img02.jpg" data-txt="강아지"/>  
+   <img title="./images/img03.jpg" data-txt="멍멍이"/>  
+</center>
+</body>
+</html>

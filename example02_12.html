@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>n번째 혹은 짝수 또는 홀수 자식 엘리먼트:nth-child(n), :nth-child(even), :nth-child(odd)</title>
+<style>
+div { float: left;  }
+span { color: blue; }
+</style>
+<!--<script src="https://code.jquery.com/jquery-3.3.1.min.js">  최신버전 링크 </script>-->
+<script src="http://code.jquery.com/jquery-latest.js"></script> <!-- 최신버전으로 불러옴 -->
+<script>
+	$(document).ready(function(){
+		$("ul li:nth-child(2)").append("<span>-2nd</span>");
+		$("ul li:nth-child(odd)").css("background","pink");
+		$("ul li:nth-child(even)").css("background","yellow");
+	});
+
+</script>
+</head>
+<body>
+   <div>
+      <ul>         <li>사과</li>         <li>바나나</li>         <li>복숭아</li>      </ul>
+   </div>
+   <div>      
+   		<ul>         <li>소나타</li>      </ul>   </div>
+   <div>
+      <ul>         <li>코끼리</li>         <li>뱀</li>         <li>토끼</li>         <li>말</li>      </ul>
+   </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>첫 번째와 마지막 자식 엘리먼트에 스타일 적용하기 :first-child, :last-child</title>
+<!--<script src="https://code.jquery.com/jquery-3.3.1.min.js">  최신버전 링크 </script>-->
+<script src="http://code.jquery.com/jquery-latest.js"></script> <!-- 최신버전으로 불러옴 -->
+<script>
+	$(document).ready(function(){
+		$("span:first-child, span:last-child,span:nth-child(2)").css("background","#9c6").css("color","red").css("font-size","20pt");
+	});
+
+</script> 
+</head> 
+<body> 
+  <div> 
+    <span>one,</span>     <span>two,</span> 
+    <span>three,</span>    <span>four</span>
+  </div> 
+  <div>      
+    <span>five,</span>     <span>six,</span> 
+    <span>seven,</span>    <span>eight</span>
+  </div>  
+</body> 
+</html>

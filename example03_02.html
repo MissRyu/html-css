@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>엘리먼트 집합들을 한 번에 처리하기</title>
+<!--<script src="https://code.jquery.com/jquery-3.3.1.min.js">  최신버전 링크 </script>-->
+<script src="http://code.jquery.com/jquery-latest.js"></script> <!-- 최신버전으로 불러옴 -->
+<script>
+	// 세 개의 img 요소에 하나의 attr메서드를 이용하여 같은 고양이 이미지를 연결하되, title, alt, width, height 속성을 추가
+	$(document).ready(function(){
+		//$("img").attr("src","./images/img01.jpg").attr("title","귀여워").attr("alt","고양이").attr("width","400px").attr("height","500px");
+		$("img").attr({"src":"./images/img01.jpg","title":"귀여워","alt":"고양이","width":"400px","height":"500px"});
+		//$("img:eq(1)").attr({"src":"./images/img02.jpg","title":"못생겼어"});
+	});
+
+</script>
+</head>
+<body>
+   <center>
+      <img /> <img /> <img /> 
+   </center>
+</body>
+</html>
