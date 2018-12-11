@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>엘리먼트의 태그 내부의 HTML 콘텐츠 얻어오기</title>
+<style>
+p {   margin: 14px;    cursor: pointer;}
+b {   text-decoration: underline;}
+button {   cursor: pointer;}
+#console{    font-size: 20px;    color: blue;  font-weight: bold;}
+</style>
+<!--<script src="https://code.jquery.com/jquery-3.3.1.min.js">  최신버전 링크 </script>-->
+<script src="http://code.jquery.com/jquery-latest.js"></script> <!-- 최신버전으로 불러옴 -->
+<script>
+$(document).ready(function(){
+	
+	// p요소를 클릭하면 클릭된 p요소의 텍스트만 #console에 표시
+	
+	var rst;	
+	$("p").click(function(){ 
+		rst=$(this).text(); // getter
+		//rst=$(this).html();
+		report(rst);
+	});
+	function report(mag){
+		$("#console").text(mag); //setter	
+	};
+});
+</script>
+</head>
+<body>
+   <p>
+      <b> html()은 </b> 엘리먼트의 <span id="tag"> 내용을 </span>
+   </p>
+   <p>
+      HTML 형식의<span id="text"> 문자열로 </span> 리턴한다.
+   </p>
+   <p>
+      버튼을 포함한 <button name="oktbtn">button</button>문장이다.
+   </p>
+   <div id="console"></div>
+</body>
+</html>

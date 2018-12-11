@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>엘리먼트에 해당 클래스가 있으면 제거하고, 없으면 추가하기</title>
+<style>
+p {    margin: 4px;   font-size: 16px;
+       font-weight: bolder;   cursor: pointer; }
+.blue { color: blue; width: 250px; height: 250px; background: url(./images/img01.jpg) no-repeat; background-size: 200px 300px;}
+</style>
+<!--<script src="https://code.jquery.com/jquery-3.3.1.min.js">  최신버전 링크 </script>-->
+<script src="http://code.jquery.com/jquery-latest.js"></script> <!-- 최신버전으로 불러옴 -->
+<script>
+	$(document).ready(function(){
+		
+	/* p요소나 div요소를 클릭하면, blue클래스가 있는 경우 bluse 클래스를 제거하고, blue클래스가 업승면, blue클래스를 추가  */
+	
+		$("p, div").click(function(){
+			$(this).toggleClass("blue");
+		});
+		
+	});
+</script>
+</head>
+<body>
+   <p class="blue">엘리먼트에 적용된 클래스를</p>
+   <p>추가하고 제거하기를 반복하기</p>
+   <div class="blue">고양이사진</div>
+</body>
+</html>

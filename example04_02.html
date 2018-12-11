@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>셀렉트된 엘리먼트들 중에서 조건에 맞는 엘리먼트 얻기</title>
+<style>
+div {
+	width: 60px; height: 60px;
+	margin: 5px; float: left;
+	border: 2px white solid;
+}
+</style>
+<!--<script src="https://code.jquery.com/jquery-3.3.1.min.js">  최신버전 링크 </script>-->
+<script src="http://code.jquery.com/jquery-latest.js"></script> <!-- 최신버전으로 불러옴 -->
+<script>
+$(document).ready(function(){
+	// div요소에 배경색을 노랑색으로 처리하고, 그 중에서 middle클래스 요소는 border를 빨강색으로 설정
+	$("div").css("background","yellow").filter(".middle").css("border-color","red");
+});
+</script>
+</head>
+<body>
+	<div id="first"></div>	
+
+	<div id="second" class="middle"></div>
+	<div id="third"  class="middle"></div>
+	<div id="fourth"  class="middle"></div>
+	<div id="fifth"  class="middle"></div>
+	
+	<div id="sixth"></div> 
+</body>
+</html>

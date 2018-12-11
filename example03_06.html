@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>엘리먼트로부터 클래스 제거하기</title>
+<style>
+p {   margin: 4px;  font-size: 20px;  font-weight: bolder;}
+.red {   color: red;}
+.under {   text-decoration: underline;}
+.highlight {   background: yellow;}
+</style>
+<!--<script src="https://code.jquery.com/jquery-3.3.1.min.js">  최신버전 링크 </script>-->
+<script src="http://code.jquery.com/jquery-latest.js"></script> <!-- 최신버전으로 불러옴 -->
+<script>
+
+$(document).ready(function(){
+	
+/* addClass 메서드를 한 번만 사용하여 p요소에 red클래스와 under 클래스를 추가 */
+	$("p").addClass("red under");
+
+/* removeClass 메서드를 한 번만 사용하여 #removeClass를 누르면 p요소의 짝수 번째 요소만 re클래스와 under클래스를 제거 */
+	$("#removeClass").click(function(){
+		$("p:even").removeClass("red under");
+	});
+	
+/* removeClass 메서드와 addClass 메서드를 한 번씩 사용하여 #changeClass를 누르면 p요소의 홀수 번째 요소만 red클래스와 under 클래스를 highlight 클래스로 교체 */
+	$("#changeClass").click(function(){
+		$("p:odd").removeClass("red under").addClass("highlight");
+	});
+});
+</script>
+</head>
+<body>
+   <button id="removeClass">removeClass</button>
+   <button id="changeClass">changeClass</button>
+   <p>엘리먼트로부터</p>
+   <p>클래스를</p>
+   <p>추가하고</p>
+   <p>제거하는</p>
+   <p>연습하기</p>
+</body>
+</html>

@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>엘리먼트에 클래스 존재 여부 확인하기</title>
+<style>
+  div{ width:100px;  height:100px;  border:1px solid #000000;
+       cursor: pointer;  margin: 4px;  float:left}	
+  .bbg { background-color: blue;   color:white;}
+  .ybg { background-color: pink;   color:white;}
+</style>
+<!--<script src="https://code.jquery.com/jquery-3.3.1.min.js">  최신버전 링크 </script>-->
+<script src="http://code.jquery.com/jquery-latest.js"></script> <!-- 최신버전으로 불러옴 -->
+<script>
+$(document).ready(function(){
+	/* div요소를 클릭하였을때 클릭된 div요소에 bbg클래스가 있으면, 해당 클래스를 제거하고, 
+	ybg클래스가 있으면, ybg클래스를 제거하고, bbg클래스로 변경하여 추가하며, 
+		아무 클래스도 없으면 , ybg클래스를 추가 */
+	
+	$("div").click(function(){
+		if($(this).hasClass("bbg")){
+			$(this).removeClass("bbg");
+		} else if($(this).hasClass("ybg")){
+			$(this).removeClass("ybg").addClass("bbg");
+		} else {
+			$(this).addClass("ybg");
+		}
+	});
+});
+	
+	
+</script>
+</head>
+<body>
+   <div class="bbg"> hasClass()는 선택된 엘리먼트에 해당 클래스가 </div>   
+   <div class="ybg"> 적용되어 있으면 true를 리턴하고</div>
+   <div> 아직 적용되어 있지 않으면 false를 리턴한다.</div>
+</body>
+</html>

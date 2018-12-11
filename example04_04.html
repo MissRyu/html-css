@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>셀렉트된 엘리먼트들 중 원하는 범위의 엘리먼트만 반환하기</title>
+<style>
+div {
+	width: 60px; height: 60px;
+	margin: 5px; float: left;
+	border: 2px blue solid;
+}
+</style>
+<!--<script src="https://code.jquery.com/jquery-3.3.1.min.js">  최신버전 링크 </script>-->
+<script src="http://code.jquery.com/jquery-latest.js"></script> <!-- 최신버전으로 불러옴 -->
+<script>
+	$(document).ready(function(){
+		// div요소중에서 인덱스가 2이상 4미만인 요소를 배경색 노랑색
+		// div요소 중에서 인덱스가 5이상인 요소를 배경색 핑크색
+		
+		$("button").click(function(){
+			$("div").slice(2, 4).css("background","yellow");
+			$("div").slice(5).css("background","pink");
+		});
+		
+
+	});
+
+</script>
+</head>
+<body>
+	<div></div>	<div></div>	<div></div>	<div></div>
+	<div></div>	<div></div>	<div></div>	<div></div>	
+	<button> 노란색 입히기</button>
+</body>
+</html>

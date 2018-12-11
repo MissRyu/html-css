@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>탐색한 엘리먼트들에 기준이 되었던 엘리먼트들 추가하기</title>
+<style>
+div { width: 60px;   height: 60px;   margin: 10px;   float: left;}
+p{ clear:both;}
+.redBorder { border: 2px solid red}
+.yellow { background: yellow}
+</style>
+<!--<script src="https://code.jquery.com/jquery-3.3.1.min.js">  최신버전 링크 </script>-->
+<script src="http://code.jquery.com/jquery-latest.js"></script> <!-- 최신버전으로 불러옴 -->
+<script>
+$(document).ready(function(){
+	// 일을 처리하던 도중에 선택자를 더 추가하려고 할 경우	
+	// button를 클릭하면  div요소에 redBorder 클래스를 추가하고 p요소를 선택자로 추가하여 div요소와 p요소에 yellow클래스를 추가
+	$("button").click(function(){
+		$("div").addClass("redBorder").add("p").addClass("yellow");
+	});
+});
+
+</script>
+</head>
+<body>   
+   <div></div>   <div></div>    <div></div>
+   <p> redBorder 클래스의 적용은 받지 못하고 yellow 클래스의 적용 받음</p>
+   <button> 클릭 </button>
+</body>
+</html>
