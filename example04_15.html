@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>셀렉트된 엘리먼트들의 내용을 변경하기</title>
+<style>
+p {
+  color: red;
+}
+</style>
+<!--<script src="https://code.jquery.com/jquery-3.3.1.min.js">  최신버전 링크 </script>-->
+<script src="http://code.jquery.com/jquery-latest.js"></script> <!-- 최신버전으로 불러옴 -->
+<script>
+	$(document).ready(function(){
+		//li요소들의 텍스트를 찾아 그 것을 대문자로 바꾸어 p요소로 추가하되, 항목이 분류되어 출력될 수 있도록 항목 뒤에 ","를 출력
+		$("p").append($("li").map(function(){
+			return $(this).text().toUpperCase(); //toUpperCase(대문자), toLowerCase(소문자)
+		}).get().join(", ");
+	});
+
+</script>
+</head>
+<body>
+  <p>
+    <b> 찾은 값 : </b>
+  </p>
+  <ul>
+	<li> apple </li>
+	<li> banana </li>
+	<li> orange </li>
+  </ul>
+</body>
+</html>

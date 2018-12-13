@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>해당 엘리먼트에 자식 엘리먼트로 추가하기</title>
+<style type="text/css">
+div { float:left; margin:25px; }
+</style>
+<!--<script src="https://code.jquery.com/jquery-3.3.1.min.js">  최신버전 링크 </script>-->
+<script src="http://code.jquery.com/jquery-latest.js"></script> <!-- 최신버전으로 불러옴 -->
+<script>
+	$(document).ready(function(){
+		
+		// "kiwi", "fig", "plum", "peach", "grape", "pear"를 배열기억장소에 저장하였다가 #fruit_ilst의 하위 요소로 추가 
+		var fruits = ["kiwi", "fig", "plum", "peach", "grape", "pear"];
+		
+		$.each(fruits, function(i, value){
+			$("#fruit_list").append("<li>"+value+"</li>"); // [append 자식의 다음]
+		});
+		
+		// "equus", "korando", "mercedes-benz", "jaguar"를 배열기억장소에 저장하였다가 #car_list의 하위 요소로 추가 []
+		var cars = ["equus", "korando", "mercedes-benz", "jaguar"];
+		
+		$(cars).each(function(i, value){
+			$("#car_list").prepend("<li>"+value+"</li>"); // prepend, append의 역순
+		});
+	});
+
+</script>
+</head>
+<body>   
+ <div> 
+    <b> 내가 좋아하는 과일 </b>
+    <ul id="fruit_list"></ul>
+ </div> 
+ 
+ <div> 
+    <b> 갖고 싶은 차  </b>
+    <ul id="car_list"></ul>
+ </div> 
+</body>
+</html>

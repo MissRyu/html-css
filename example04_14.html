@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<!--<script src="https://code.jquery.com/jquery-3.3.1.min.js">  최신버전 링크 </script>-->
+<script src="http://code.jquery.com/jquery-latest.js"></script> <!-- 최신버전으로 불러옴 -->
+<script>
+$(document).ready(function(){
+	//p요소를 배경색 pink로 하고, 그 후손 중에서 em요소는 글자색을 red로 설정
+	$("p").css("backgroun","pink").find("em").css("color","red");
+});
+</script>
+</head>
+<body>
+	<div> p 엘리먼트 중에서 <em> 이텔릭 단어의 </em>  </div> 
+	<p> 글자 색을  <em> 빨간색으로 </em> 변경한다.</p> 
+</body>
+</html>

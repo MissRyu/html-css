@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>해당 엘리먼트 뒤에 위치하는 형제 엘리먼트 찾기</title>
+<style>
+div, span {
+	width: 60px; height: 60px;
+	margin: 5px; float: left;
+	border: 2px red solid;
+	background: white;
+	}
+.after { background: pink } 
+.selected {border: 5px blue solid;}
+</style>
+<!--<script src="https://code.jquery.com/jquery-3.3.1.min.js">  최신버전 링크 </script>-->
+<script src="http://code.jquery.com/jquery-latest.js"></script> <!-- 최신버전으로 불러옴 -->
+<script>
+	$(document).ready(function(){
+		// 버튼을 클릭했을 경우 div요소의 다음 요소에 after클래스를 추가
+		// div요소에 배경색을 red로 설정하고, 다음 요소들 중에서 #fourth 요소에 selected클래스를 추가하시오.
+		$("button").click(function(){
+			$("div").next().addClass("after");
+			$("div").css("background","red").nextAll("#fourth").addClass("selected");
+		});
+	});
+
+</script>
+</head>
+<body>
+	<p> <button> 형제 엘리먼트에 스타일 입히기</button> </p>
+	
+	<div id="first">first</div>	
+
+	<span id="second" class="middle">
+		sibling
+		<div id="child">child</div>
+	</span>
+	<div id="third"  class="middle">sibling</div>
+	<span id="fourth"  class="middle">sibling</span>
+	<span id="fifth"  class="middle">sibling</span>
+	
+	<div id="sixth">last</div> 
+</body>
+</html>

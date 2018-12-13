@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+  ul { float:left; margin:5px; font-size:16px; font-weight:bold; } 
+  p { color:blue; margin:10px 20px; font-size:16px; padding:5px;  
+      font-weight:bolder; } 
+  .yellow { background:yellow; } 
+</style>
+<!--<script src="https://code.jquery.com/jquery-3.3.1.min.js">  최신버전 링크 </script>-->
+<script src="http://code.jquery.com/jquery-latest.js"></script> <!-- 최신버전으로 불러옴 -->
+<script>
+$(document).ready(function(){
+	//.yellow요소에 글자색을 gray로 하고 현재 요소들에게 글자색을 red로 하고, 그 형제들의 수를 b요소에 텍스트로 출력
+	var len = $(".yellow").css("color","gray").siblings().css("color","red").length;
+	
+	$("b").text(len);
+});
+</script>
+</head>
+<body>
+  <ul>
+    <li>One</li>
+    <li>Two</li>
+    <li class="yellow">Three</li>
+    <li>Four</li>
+  </ul>
+  <ul>
+    <li>Five</li>
+    <li>Six</li>
+    <li>Seven</li>
+  </ul>
+  <ul>
+    <li>Eight</li>
+    <li class="yellow">Nine</li>
+    <li>Ten</li>
+    <li>Eleven</li>
+  </ul>
+  <p>
+    찾은 형제 엘리먼트의 개수: <b></b>
+  </p>
+</body>
+</html>
