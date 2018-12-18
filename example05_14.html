@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+  P { width:70px; height:50px;  margin:5px; 
+        background:red; cursor:pointer; } 
+</style>
+<!--<script src="https://code.jquery.com/jquery-3.3.1.min.js">  최신버전 링크 </script>-->
+<script src="http://code.jquery.com/jquery-latest.js"></script> <!-- 최신버전으로 불러옴 -->
+<script>
+	$(document).ready(function(){
+		// p요소를 클릭하면 클릭된 요소의 마진을 포함하지 않은 폭과 마진을 포함한 폭의 크기를 #result1에 출력하고, 
+		//#result2에는 마진을 포함하지 않은 높이와 마진을 포함한 높이의 크기를 출력
+		$("p").click(function(){
+			$("#result1").text("마진 포함하지 않은 폭 : "+$(this).outerWidth()+", 마진을 포함한 폭 : "+$(this).outerWidth(true));
+			
+			$("#result2").text("마진 포함하지 않은 높이 : "+$(this).outerHeight()+", 마진을 포함한 높이 : "+$(this).outerHeight(true));
+		});
+	});
+
+</script>
+</head>
+<body>
+  <P>Hello</P>
+  <br>
+  <div id="result1"></div> 
+  <div id="result2"></div> 
+</body>
+</html>

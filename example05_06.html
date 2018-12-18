@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>해당 엘리먼트를 원하는 엘리먼트로 감싸기</title>
+<style>
+.border {
+	border: 2px solid red;
+	margin:10px; 
+	padding:0px 30px;
+	float :left;
+	width: 60px;
+}
+</style>
+<!--<script src="https://code.jquery.com/jquery-3.3.1.min.js">  최신버전 링크 </script>-->
+<script src="http://code.jquery.com/jquery-latest.js"></script> <!-- 최신버전으로 불러옴 -->
+<script>
+	$(document).ready(function(){
+		//p요소를 클릭하면 div.border를 p요소의 각 각의 부모로 추가
+		$("p").click(function(){
+			$("p").wrap("<div class='border'></div>");
+		});
+		
+		//p요소를 클릭하면 div.abc를 p요소의 하나의 부모로 추가
+		$("p").click(function(){
+			$("p").wrapAll("<div class='abc'></div>");
+		});
+	});
+
+</script>
+</head>
+<body>
+	<p>Racoon's</p>
+	<div>
+		<p>jQuery</p>
+	</div>
+	<p>Mobile</p>
+	<p>Story</p>
+</body>
+</html>

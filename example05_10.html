@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>해당 엘리먼트에 자식 엘리먼트로 추가하기</title>
+<style type="text/css">
+span { display:block; }
+</style>
+<!--<script src="https://code.jquery.com/jquery-3.3.1.min.js">  최신버전 링크 </script>-->
+<script src="http://code.jquery.com/jquery-latest.js"></script> <!-- 최신버전으로 불러옴 -->
+<script>
+	$(document).ready(function(){
+		// button요소를 클릭하면 em요소를 복제하여 span요소의 첫번째 자식요소로 추가
+		$("button").click(function(){
+			$("em").clone().appendTo($("span"));
+			//$("span").append($("em").clone());
+		});
+		
+	});
+</script>
+</head>
+<body>   
+ <b> 사과 </b>
+ <em> 바나나 </em>
+ <span> 갖고 싶은 과일 : </span>
+ <span> 먹고 싶은 과일 : </span>
+</body>
+</html>

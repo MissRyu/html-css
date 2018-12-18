@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>해당 엘리먼트를 원하는 엘리먼트로 바꾸기</title>
+<style>
+*{   margin:10px;   width: 100px;  }
+.border { border: 2px solid red;  }
+</style>
+<!--<script src="https://code.jquery.com/jquery-3.3.1.min.js">  최신버전 링크 </script>-->
+<script src="http://code.jquery.com/jquery-latest.js"></script> <!-- 최신버전으로 불러옴 -->
+<script>
+	$(document).ready(function(){
+		//div.box요소를 클릭하면 클릭된 요소는 section.border로 변경
+		$("div.box").click(function(){
+			$(this).replaceWith("<section class='border'>변경됨</section>");
+		});
+	});
+</script>
+</head>
+<body>	
+<div>
+  <div class="box one">Racoon's</div>
+  <div class="box two">jQuery</div>
+  <div class="box three">Mobile</div>
+  <div class="box four">Story</div>
+</div>
+</body>
+</html>

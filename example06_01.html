@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+ul { float:left; margin:30px}
+</style>
+<meta charset="UTF-8">
+<title>DOM 엘리멘트에 이벤트 적용하기</title>
+<!--<script src="https://code.jquery.com/jquery-3.3.1.min.js">  최신버전 링크 </script>-->
+<script src="http://code.jquery.com/jquery-latest.js"></script> <!-- 최신버전으로 불러옴 -->
+<script>
+	$(function(){
+		// a요소에 마우스 포인터를 올리면 a요소의 herf 속성에 있는 내용을 img 요소의 src속성으로 대입시키고, 0.5초 후에 페이드 효과로 나타나게 설정
+		$("a").bind("mouseover", function(){
+			$("img").attr("src",$(this).attr("href")).css("display","none");
+			$("img").delay(500).fadeIn(1000); // 1000 = 1초
+		});
+	});
+
+</script>
+</head>
+<body>   
+   <ul>
+   <li> <a href="images/img01.jpg"> 똘이 사진 </a> </li>
+   <li> <a href="images/img02.jpg"> 을이 사진 </a> </li>
+   </ul>
+   <img>
+</body>
+</html>

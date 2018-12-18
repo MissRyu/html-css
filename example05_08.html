@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>해당 엘리먼트를 내용을 비우기</title>
+<!--<script src="https://code.jquery.com/jquery-3.3.1.min.js">  최신버전 링크 </script>-->
+<script src="http://code.jquery.com/jquery-latest.js"></script> <!-- 최신버전으로 불러옴 -->
+<script>
+	$(document).ready(function(){
+		// #btn1요소를 클릭하면, p요소의 내용을 비우기
+		$("#btn1").click(function(){
+			$("p").empty();
+		});
+		
+		// #btn2요소를 클릭하면, p요소를 지우기
+		$("#btn2").click(function(){
+			$("p").remove();
+		});
+	});
+
+</script>
+</head>
+<body>
+	<button id="btn1"> 엘리먼트 비우기 </button>
+	<button id="btn2"> 엘리먼트 지우기</button> 
+	<div>	
+		<p>Racoon's</p>	
+		jQuery
+	</div>
+	<p> <span> Mobile </span> </p>
+	<p>Story</p>		
+</body>
+</html>

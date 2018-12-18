@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>하나의 DOM 엘리멘트에 여러 개의 이벤트 적용하기</title>
+<script src="http://code.jquery.com/jquery-latest.js"></script> <!-- 최신버전으로 불러옴 -->
+<script>
+	$(function(){
+		// img요소에 마우스 포인터를 올리면 src속성이 apple.gif로 마우스 포인터가 img 요소를 벗어 나면 
+		//banana.gif로 클릭하면 strawberry.gif로 변경되도록 이벤트를 구현
+		$("img").bind({
+			mouseover : function() { $(this).attr("src","apple.gif")},
+			mouseout : function() { $(this).attr("src", "banana.gif")},
+			click : function() { $(this).attr("src", "strawberry.gif");}						
+		});
+	});
+
+</script>
+</head>
+<body>   
+   <img src="banana.gif">
+</body>
+</html>
