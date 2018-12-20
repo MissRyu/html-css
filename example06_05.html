@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>필요 없는 이벤트 제거하기 </title>
+<style type="text/css">
+img{ 
+   width: 140px; height: 120px;		
+}
+</style>
+<script src="http://code.jquery.com/jquery-latest.js"></script> <!-- 최신버전으로 불러옴 -->
+<script>
+	$(function(){
+		// img요소를 클릭할 때 폭과 너비가 2배로 커지도록 구현하되, 클릭 시능이 세번만 구현되도록 설정
+		
+		var n = 1;
+		
+		$("img").bind("click", function(event){
+			var $tar = $(event.target);
+			
+			$tar.width($tar.width()*2);
+			$tar.height($tar.width()*2);
+			
+			n=n+1;
+			
+			if(n>=4){
+				$tar.unbind();	
+			};
+		});		
+	});
+	
+	
+</script>
+</head>
+<body>   
+   <img src="/images/img2.jpg">
+</body>
+</html>

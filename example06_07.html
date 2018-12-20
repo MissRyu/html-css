@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이벤트 위임하기</title>
+<style type="text/css">
+ p { background:yellow; font-weight:bold; 
+     cursor:pointer; padding:5px; } 
+</style>
+<!--<script src="http://code.jquery.com/jquery-latest.js"></script>  최신버전으로 불러옴 -->
+<script src="https://code.jquery.com/jquery-1.8.0.min.js">  </script>
+<script>
+	$(function(){
+	/* p요소를 클릭하면 그 요소의 다음 요소로 p요소를 추가하며, 
+	   원래 있던 p요소를 클릭하거나 추가된 p요소를 클릭해도 계속 클릭한 p의 다음 요소로 
+	   p 요소를 추가될 수 있도록 구현 */
+	 	$("p").live("click", function(){
+			$(this).after("<p></p>");
+		});
+		
+	});
+
+</script>
+</head>
+<body>
+	 <p>Click me!</p> 
+</body>
+</html>

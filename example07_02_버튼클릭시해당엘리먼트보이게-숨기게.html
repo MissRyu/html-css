@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>해당 엘리먼트를 사라지게 하기</title>
+<style>
+span{ display:none}
+</style>
+<!--<script src="https://code.jquery.com/jquery-3.3.1.min.js">  최신버전 링크 </script>-->
+<script src="http://code.jquery.com/jquery-latest.js"></script> <!-- 최신버전으로 불러옴 -->
+<script>
+	$(function(){
+		// #btn1요소를 클릭하면 #data1요소를 보이고 하고, 다 보이게 되면 #msg에 #data1이 보여졌다는 메시지를 띄운다.
+		$("#btn1").bind("click", function(){
+			$("#data1").show(1000, function(){
+				$("#msg").text("#data1이 보여짐");
+			});
+		});
+		
+		// #btn2요소를 클릭하면 #data1요소를 보이지 않게 하고, #msg에 #data1이 숨겨졌다는 메시지를 띄운다.
+		$("#btn2").bind("click", function(){
+			$("#data1").hide(1000, function(){
+				$("#msg").text("#data1이 숨겨짐");
+			});
+		});
+		
+		// #btn3요소를 클릭하면 #data2요소를 보이고 하고, 다 보이게 되면 #msg에 #data2이 보여졌다는 메시지를 띄운다.
+				$("#btn3").bind("click", function(){
+			$("#data2").show(1000, function(){
+				$("#msg").text("#data2이 보여짐");
+			});
+		});
+		
+		// #btn4요소를 클릭하면 #data2요소를 보이지 않게 하고, #msg에 #data2이 보여졌다는 메시지를 띄운다.
+				$("#btn4").bind("click", function(){
+			$("#data2").hide(1000, function(){
+				$("#msg").text("#data2이 숨겨짐");
+			});
+		});
+	});
+
+</script>
+</head>
+<body>  
+  <button id="btn1">Show It</button> 
+  <button id="btn2">Hide It</button> 
+  <span id="data1">안녕하세요.</span> <br>
+  <button id="btn3">Show It slow</button> 
+  <button id="btn4">Hide It slow</button>  
+  <span id="data2">반갑습니다.</span>
+  <div id="msg"></div>
+</body>
+</html>

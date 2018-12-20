@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>마우스를 누르면 파란색, 놓으면 빨간색으로 배경색 바꾸기</title>
+<style type="text/css">
+div{ width: 70px; height: 50px; float:left;
+     background-color: red; cursor: pointer;
+     margin: 5px
+}
+</style>
+<script src="http://code.jquery.com/jquery-latest.js"></script> <!-- 최신버전으로 불러옴 -->
+<script>
+	$(function(){
+		/* div요소에 마우스를 누르고 있을 때는 배경색 파랑, 떼었을때는 배경색 노랑, 
+		   마우스포인터가 그 영역에서 빠져 나오면 빨강, 그 영역으로 다시 들어가면 초록으로 설정 */
+		$("div").mousedown(function(){
+			$(this).css("background","blue");
+		});
+		
+		$("div").mouseup(function(){
+			$(this).css("background","yellow");
+		});
+		
+		$("div").mouseleave(function(){
+			 $(this).css("background","red");
+		});
+		
+		$("div").mouseenter(function(){
+			 $(this).css("background","green");
+		});
+		
+	});
+
+</script>
+</head>
+<body>   
+   <div></div> <div></div> <div></div>
+</body>
+</html>
