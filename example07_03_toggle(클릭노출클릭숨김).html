@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>해당 엘리먼트를 사라지게 하기</title>
+<style>
+span{ display:none;}
+</style>
+<!--<script src="https://code.jquery.com/jquery-3.3.1.min.js">  최신버전 링크 </script>-->
+<script src="http://code.jquery.com/jquery-latest.js"></script> <!-- 최신버전으로 불러옴 -->
+<script>
+	$(function(){
+		// #btn1 요소를 한 번 클릭하면 #data1 요소를 보이게 하고, 두 번 클릭하면 다시 숨겨지도록 구현
+		$("#btn1").click(function(){
+			$("#data1").toggle();
+		});
+		
+		// #btn2 요소를 한 번 클릭하면 #data2 요소를 느리게 보이게 하고, 두 번 클릭하면 다시 느리게 숨겨지도록 구현
+		$("#btn2").click(function(){
+			$("#data2").toggle("solw");
+		});
+		
+	});
+
+</script>
+</head>
+<body>  
+  <button id="btn1">Show/Hide It</button> 
+  <span id="data1">안녕하세요.</span> <br>
+  <button id="btn2">Show/Hide It slow</button> 
+  <span id="data2">반갑습니다.</span>
+</body>
+</html>

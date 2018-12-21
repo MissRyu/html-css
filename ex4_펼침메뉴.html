@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>저수준 인터페이스 예제4</title>
+	<style>
+		* {margin: 0; padding: 0;}
+		body, html {width: 100%; height: 100%;}
+		ul {list-style: none;}
+		#gnb {width: 80%; height: 60px;}
+		#gnb li {line-height: 60px;}
+		#gnb li.dep1{width: 25%; text-align: center; float: left;}
+		.sub {display: none;}
+		
+	</style>
+	
+	<!--<script src="https://code.jquery.com/jquery-3.3.1.min.js">  최신버전 링크 </script>-->
+<script src="http://code.jquery.com/jquery-latest.js"></script> <!-- 최신버전으로 불러옴 -->
+<script>
+	$(function(){
+		
+		var sw1=1;
+		
+		$("#gnb .dep1").click(function(){
+			$(this).find(".sub").slideToggle(500);
+			
+			if(sw1==1){
+				$(this).css("background","#333").css("color","#fff");
+			} else {
+				$(this).css("background","#fff").css("color","#333");
+			}
+			
+			sw1=sw1*-1;
+		});
+	});
+</script>
+
+</head>
+<body>
+	<nav id="gnb">
+		<ul>
+			<li class="dep1">메뉴1
+				<ul class="sub">
+					<li>서브메뉴11</li>
+					<li>서브메뉴12</li>
+					<li>서브메뉴13</li>
+					<li>서브메뉴14</li>
+					<li>서브메뉴15</li>
+				</ul>
+			</li>
+			<li class="dep1">메뉴2
+				<ul class="sub">
+					<li>서브메뉴21</li>
+					<li>서브메뉴22</li>
+					<li>서브메뉴23</li>
+					<li>서브메뉴23</li>
+					<li>서브메뉴24</li>
+				</ul>
+			</li>
+			<li class="dep1">메뉴3
+				<ul class="sub">
+					<li>서브메뉴31</li>
+					<li>서브메뉴32</li>
+					<li>서브메뉴33</li>
+					<li>서브메뉴34</li>
+					<li>서브메뉴34</li>
+				</ul>
+			</li>
+			<li class="dep1">메뉴4
+				<ul class="sub">
+					<li>서브메뉴41</li>
+					<li>서브메뉴42</li>
+					<li>서브메뉴43</li>
+					<li>서브메뉴44</li>
+					<li>서브메뉴45</li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+</body>
+</html>

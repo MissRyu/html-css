@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Sliding</title>
+<style>
+div {
+  background: #3d9a44;   margin: 3px;
+  width: 80px;   height: 40px;
+  float: left;
+}
+</style>
+<!--<script src="https://code.jquery.com/jquery-3.3.1.min.js">  최신버전 링크 </script>-->
+<script src="http://code.jquery.com/jquery-latest.js"></script> <!-- 최신버전으로 불러옴 -->
+<script>
+	$(function(){
+		// #slideUp 요소를 클릭하면 div요소를 위로 슬라이딩 되면서 숨겨지도록 구현
+		$("#slideUp").click(function(){
+			$("div").slideUp();
+		});
+		
+		// #slideDown 요소를 클릭하면 div요소를 아래로 슬라이딩 되면서 보여지도록 구현
+		$("#slideDown").click(function(){
+			$("div").slideDown();
+		});
+		
+		// #slideToggle 요소를 클릭하면 div요소를 아래로 슬라이딩 하면서 보여지도록 구현 (교대로 수행)
+		$("#slideToggle").click(function(){
+			$("div").slideToggle();
+		});
+	});
+
+</script>
+</head>
+<body>
+  <button id="slideUp"> slideUp </button>
+  <button id="slideDown"> slideDown </button>
+  <button id="slideToggle"> slideToggle </button>
+  <p>
+  <div></div>   <div></div>    <div></div>      <div></div> 
+  </body>
+</html>

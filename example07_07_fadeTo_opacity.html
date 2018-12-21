@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>엘리먼트에 투명도 값 변경하기</title>
+<style>
+div {
+  width: 80px;  height: 80px;
+  margin: 3px;  float: left;
+}
+div#red {  background: #f00;}
+div#green {  background: #0f0;}
+div#blue {  background: #00f;}
+</style>
+<!--<script src="https://code.jquery.com/jquery-3.3.1.min.js">  최신버전 링크 </script>-->
+<script src="http://code.jquery.com/jquery-latest.js"></script> <!-- 최신버전으로 불러옴 -->
+<script>
+	$(function(){
+		// #red요소를 클릭하면, 클릭된 요소를 opacity 값이 0.5로 서서히 바뀌는 효과 적용
+		$("#red").click(function(){
+			$(this).fadeTo("slow", 0.5);
+		});
+		
+		// #green 요소를 클릭하면, 클릭된 요소를 opacity 값이 0.3으로 서서히 바뀌는 효과 적용
+		$("#green").click(function(){
+			$(this).fadeTo("slow", 0.3);
+		});
+		
+		// #blue 요소를 클릭하면, 클릭된 요소를 opacity 값이 0으로 서서히 바뀌는 효과 적용
+		$("#blue").click(function(){
+			$(this).fadeTo(1000, 0);
+		});
+	});
+
+</script>
+</head>
+<body>
+  <div id="red"></div> 
+  <div id="green"></div> 
+  <div id="blue"></div> 
+</body>
+</html>
