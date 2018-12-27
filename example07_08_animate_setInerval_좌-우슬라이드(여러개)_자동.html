@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>사용자 효과</title>
+<style>
+#region { 
+  position: relative; width: 200px; height:200px;
+  overflow:hidden;  margin:auto;
+}
+
+#images{
+  width: 400px; height: 200px;
+}
+#images a img { 
+  width:200px; height:200px; 
+  border:0; position: relative;}
+
+#images a {display: block; width:200px; float: left;}
+	
+#direction {
+  width: 360px;  margin:auto;
+}
+.leftbtn{margin-top:10px;}
+.rightbtn{margin-left:290px;margin-top:10px;}
+</style>
+<!--<script src="https://code.jquery.com/jquery-3.3.1.min.js">  최신버전 링크 </script>-->
+<script src="http://code.jquery.com/jquery-latest.js"></script> <!-- 최신버전으로 불러옴 -->
+<script>
+ $(function(){
+	 var wd = $("#region").width(); // #region의 가로값
+	 var len = $("#images a").length; // #images a 의 갯수
+	 var sw = 1;
+	 //console.log(wd, len);
+	 
+	 $("#images").width(wd*len);
+	 var maxlength = wd*(len-1)*-1; // 같음 var maxlength = -wd*(len-1);
+	 var aniLen;
+	 var intv = setInterval(function(){rightMove();}, 3000); // setInterval 주기적 시간으로 실행 셋팅
+	 
+	 $(".rightbtn").click(function(){
+		 clearInterval(intv);
+		 rightMove();
+		 intv = setInterval(function(){rightMove();}, 3000);
+	 });
+	 
+	 $(".leftbtn").click(function(){
+	   	 clearInterval(intv);
+		 leftMove();
+		 intv = setInterval(function(){rightMove();}, 3000);
+	 });
+	 
+	 $("#stop").click(function(){
+		 if(sw==1){
+			 clearInterval(intv);
+			 $("#stop").text("재생");
+		 } else {
+			 intv = setInterval(function(){rightMove();}, 3000);			 
+			 $("#stop").text("정지");
+		 }
+		 sw=sw*-1;
+	 });
+	 
+	 function rightMove(){
+		  aniLen = parseInt($("#images").css("margin-left"));
+		 if (aniLen>maxlength){
+			$("#images").not(":animated").animate({"margin-left" : "-="+wd+"px"}, 500);  // .not(":animated") - 애니메이션 효과가 실행 중인 요소가 아닌경우.
+		 } else { 
+			$("#images").not(":animated").animate({"margin-left" : "0px"}, 500); // aniLen>maxlength 조건이 아닌경우 첫화면으로 돌아감
+		 };
+	 };
+	 
+	 function leftMove(){
+		 aniLen = parseInt($("#images").css("margin-left"));
+		 if (aniLen<0){
+		$("#images").not(":animated").animate({"margin-left" : "+="+wd+"px"}, 500); 
+		 } else {
+		 $("#images").not(":animated").animate({"margin-left" : maxlength+"px"}, 500); // aniLen<0 조건이 아닌경우 마지막화면으로 돌아감
+		 }; 
+	 };
+ });
+</script>
+</head>
+<body>
+	<div id="region">
+		<div id="images">
+			<a href="#"><img src="images/1.jpg" /></a> 
+			<a href="#"><img src="images/2.jpg" /></a>
+			<a href="#"><img src="images/3.jpg" /></a>
+			<a href="#"><img src="images/4.jpg" /></a>
+			<a href="#"><img src="images/5.jpg" /></a>
+		</div>
+	</div>
+	<div id="direction">
+		<button class="leftbtn">&laquo;</button>
+		<button class="rightbtn">&raquo;</button>
+	</div>
+	<button id="stop">정지</button>
+</body>
+</html>

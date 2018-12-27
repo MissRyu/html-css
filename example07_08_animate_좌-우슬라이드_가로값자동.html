@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>사용자 효과</title>
+<style>
+#region { 
+  position: relative; width: 200px; height:200px;
+  overflow:hidden;  margin:auto;
+}
+
+#images{
+  width: 400px; height: 200px;
+}
+#images a img { 
+  width:200px; height:200px; 
+  border:0; position: relative;}
+
+#images a {display: block; width:200px; float: left;}
+	
+#direction {
+  width: 360px;  margin:auto;
+}
+.leftbtn{margin-top:10px;}
+.rightbtn{margin-left:290px;margin-top:10px;}
+</style>
+<!--<script src="https://code.jquery.com/jquery-3.3.1.min.js">  최신버전 링크 </script>-->
+<script src="http://code.jquery.com/jquery-latest.js"></script> <!-- 최신버전으로 불러옴 -->
+<script>
+ $(function(){
+	 var wd = $("#region").width(); // #region의 가로값
+	 var len = $("#images a").length; // #images a 의 갯수
+	 console.log(wd, len);
+	 
+	 $(".leftbtn").click(function(){
+		$("#images").animate({"margin-left" : "-"+wd+"px"}, 500); 
+	 });
+	 
+	 $(".rightbtn").click(function(){
+		$("#images").animate({"margin-left" : "0px"}, 500); 
+	 });
+ });
+</script>
+</head>
+<body>
+	<div id="region">
+		<div id="images">
+			<a href="#"><img src="images/1.jpg" id="leftimage" /></a> 
+			<a href="#"><img src="images/2.jpg" id="rightimage" /></a>
+		</div>
+	</div>
+	<div id="direction">
+		<button class="leftbtn">&laquo;</button>
+		<button class="rightbtn">&raquo;</button>
+	</div>
+</body>
+</html>
