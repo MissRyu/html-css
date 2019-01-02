@@ -2,3 +2,4 @@ http://tcpschool.com/
 https://nodejs.org/ko/download/
 http://jquery.com/
 http://www.toursketch.co.kr/detailview.html?tid=220191#que_booking
+jQuery contains() 메서드를 활용한 검색기능 구현 - http://webruden.tistory.com/107 
