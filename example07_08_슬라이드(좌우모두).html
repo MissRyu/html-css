@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>사용자 효과</title>
+<style>
+#region { 
+  position: relative; width: 200px; height:200px;
+  overflow:hidden;  margin:auto;
+}
+
+#images{
+  width: 400px; height: 200px;
+}
+#images a img { 
+  width:200px; height:200px; 
+  border:0; position: relative;}
+
+#images a {display: block; width:200px; float: left;}
+	
+#direction {
+  width: 360px;  margin:auto;
+}
+.leftbtn{margin-top:10px;}
+.rightbtn{margin-left:290px;margin-top:10px;}
+</style>
+<!--<script src="https://code.jquery.com/jquery-3.3.1.min.js">  최신버전 링크 </script>-->
+<script src="http://code.jquery.com/jquery-latest.js"></script> <!-- 최신버전으로 불러옴 -->
+<script>
+ $(function(){
+	 var imgWd = parseInt($("#region").width()); // id="region" 값의 가로값을 구함
+	 var intv = setInterval(function(){
+		nextAni(); 
+	 }, 3000);
+	 
+	 function nextAni(){
+	 /* #images를 두번째 이미지를 나타나게 하는 애니메이션을 실행한 후 
+		    #images의 첫번째 자식인 a를 맨 뒤로 이동시킨다. */
+		 $("#images").not(":animated").animate({"margin-left":-imgWd+"px"}, 500, function(){
+			 $("#images a").eq(0).appendTo($("#images"));
+			 $("#images").css("margin-left","0px");
+		 });	 
+	 };
+	 
+	 var num = $("#images a").length; // #images a 의 갯수
+	 
+	 /* #images를 a태그 마지막 요소를 맨 앞으로 가져오면서 #images의 왼쪽 마진은 -imgWd로 설정한 후 #images의 마진은 0으로 애니메이션 
+		#images의 첫번째 자식인 a를 맨 뒤로 이동시킨다. */	 
+	 function prevAni(){		 
+			$("#images a").eq(num-1).prependTo($("#images"));
+			$("#images").css("margin-left",-imgWd+"px");
+		 	$("#images").not(":animated").animate({"margin-left":"0px"}, 500);
+		 
+	 };
+	 
+	 $(".rightbtn").click(function(){
+		clearInterval(intv);
+		nextAni();
+		intv = setInterval(function(){nextAni();}, 3000);
+	 });
+	 
+	  $(".leftbtn").click(function(){
+		clearInterval(intv);
+		prevAni();
+		intv = setInterval(function(){nextAni();}, 3000);
+	 });
+ });
+</script>
+</head>
+<body>
+	<div id="region">
+		<div id="images">
+			<a href="#"><img src="images/1.jpg" /></a> 
+			<a href="#"><img src="images/2.jpg" /></a>
+			<a href="#"><img src="images/3.jpg" /></a>
+			<a href="#"><img src="images/4.jpg" /></a>
+			<a href="#"><img src="images/5.jpg" /></a>
+		</div>
+	</div>
+	<div id="direction">
+		<button class="leftbtn">&laquo;</button>
+		<button class="rightbtn">&raquo;</button>
+	</div>
+	<button id="stop">정지</button>
+</body>
+</html>

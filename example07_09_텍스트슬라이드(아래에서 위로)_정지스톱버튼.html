@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>텍스트 슬라이더</title>	
+	<!--<script src="https://code.jquery.com/jquery-3.3.1.min.js">  최신버전 링크 </script>-->
+	<script src="http://code.jquery.com/jquery-latest.js"></script> <!-- 최신버전으로 불러옴 -->
+	<style>
+		* {margin: 0; padding: 0;}
+		.wrap {width: 300px; height: 120px; overflow: hidden; margin : 60px 0 0 60px;}
+		.lst {margin-top: 0;}
+		li {height: 40px; line-height: 40px; margin-top: 0; padding-top: 0; padding-left: 40px;}
+		a {text-decoration: none; color: #333; }
+	</style>
+	<script>
+	$(function(){
+		/* .lst의 margin-top 값을 -40px로 하는 애니메이트로 한 후 
+		   .last의 첫번째 li요소를 맨 뒤로 보내고, .lst의 margin-top을 0으로 설정 */
+		var ht = parseInt($(".lst li").height()) * -1;
+		var intv = setInterval(function(){
+			txtAni();
+		}, 2000);
+		
+		function txtAni(){
+			$(".lst").not(":animated").animate({"margin-top":ht+"px"}, 500, function(){
+				$(".lst li").eq(0).appendTo($(".lst"));
+				$(".lst").css("margin-top","0px");
+			});
+		};
+		
+		var sw = 1;
+		
+		$("#playStop").click(function(){
+			if(sw==1){
+				clearInterval(intv);
+				$(this).text("실행");
+			} else {
+				intv = setInterval(function(){
+					txtAni();
+				}, 2000);
+				$(this).text("정지");
+			}
+			sw = sw * -1;
+		});
+	});
+	</script>
+</head>
+<body>
+	<div class="wrap">
+		<ul class="lst">
+			<li><a href="">글제목1</a></li>
+			<li><a href="">글제목2</a></li>
+			<li><a href="">글제목3</a></li>
+			<li><a href="">글제목4</a></li>
+			<li><a href="">글제목5</a></li>
+			<li><a href="">글제목6</a></li>
+			<li><a href="">글제목7</a></li>
+			<li><a href="">글제목8</a></li>
+		</ul>
+	</div>
+	<button id="playStop">정지</button>
+</body>
+</html>
