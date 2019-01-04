@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>회전 스피너</title>
+    <style>
+    #vs { width:700px; height: auto; margin:100px auto; }
+    #vs img { display:block; width: 100%; }    
+    </style>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script>
+$(function(){
+	
+	var n = 1;
+	
+    $(".left").click(function(){
+		n=n+1;
+		if(n<=36){
+			leftSpin(n);
+		} else {
+			n=1;
+			leftSpin(n);
+		}
+	});
+	
+	$(".right").click(function(){
+		n=n-1;
+		if(n>=1){
+			leftSpin(n);
+		} else {
+			n=36;
+			leftSpin(n);
+		}
+	});
+	
+	function leftSpin(a){
+		$("#vs img").attr("src","images/SWP_"+a+".png");
+	}
+});    
+</script>
+</head>
+<body>
+    <div id="vs"><img src="images/SWP_1.png" alt=""></div>
+    <div id="btnBox">
+        <button class="left">좌회</button>
+        <button class="right">우회</button>
+    </div>
+</body>
+</html>

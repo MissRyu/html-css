@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>신장 애니메이션</title>
+	<style>
+		ul {list-style: none;}
+		#graph {width: 500px; height: 800px; margin: 100px auto; border-left: 2px solid #333; border-bottom: 2px solid #333; position: relative;}
+		#graph li {width: 100px; height: 800px; margin: 0px 5px; float: left; background-color: aquamarine; position: relative;}
+		#graph li span {display: block; width: 100px; position: absolute; z-index: 50;}
+		#graph li span.top {background-color: #333; height: 50px; bottom: 150px;}
+		#graph li span.len {background-color: #999; height: 100px; bottom: 50px;}
+		#graph li span.bottom {background-color: #333; height: 50px; bottom: 0;}
+	</style>
+	
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script>
+	$(function(){
+		$("#graph li").mouseover(function(){
+			$(this).find("span.top").animate({"bottom":"450px"}, 800);
+			$(this).find("span.len").animate({"height":"400px"}, 800);
+		});
+	});
+	</script>
+</head>
+<body>
+	<div id="graph">
+		<ul>
+			<li class="item1">
+				<span class="top"></span>
+				<span class="len"></span>
+				<span class="bottom"></span>
+			</li>
+			<li class="item2">
+				<span class="top"></span>
+				<span class="len"></span>
+				<span class="bottom"></span>
+			</li>
+			<li class="item3">
+				<span class="top"></span>
+				<span class="len"></span>
+				<span class="bottom"></span>
+			</li>
+			<li class="item4">
+				<span class="top"></span>
+				<span class="len"></span>
+				<span class="bottom"></span>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>

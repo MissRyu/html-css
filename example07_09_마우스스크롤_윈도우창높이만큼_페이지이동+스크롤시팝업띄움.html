@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        /*common*/
+        *{margin:0; padding:0;}
+        a{text-decoration:none;}
+        body{font-family:'NanumGothic', serif;}
+        img{border:0;}
+        p.coment {font-family:'NanumMyeongjo', serif}
+        ul{list-style:none}
+        /*공통 클래스 설정*/
+		body, html { width:100%; height:100%; }
+		.page { overflow:hidden; width:100%; height:100%; }
+        #hd, #content, #ft{width:100%; clear:both;}
+        #hd { position:fixed; z-index:20; left:0; top:0; background:#000;
+        	color:#fff; height:80px; }
+        #gnb { width:80%; margin:0 auto; }
+        #gnb li { width:25%; float:left; padding-top:15px; }
+        #gnb a { display:block; height:20px; line-height:20px; 	padding-top:10px;
+        	width:100%; color:#fff; text-align:center; font-size:1.4em; 
+        	padding-bottom:10px; }
+        /*main*/
+        #slider{overflow:hidden;  position:relative; height:100%; }
+        #slider #banner1 { width:400%; height:100%; }
+        #slider #banner1 a { width:25%; display:block; float:left; height:100%; 
+        	position:relative; }
+        #slider #banner1 img {width:100%; display:block; height:100%; overflow:hidden;}
+        .page { clear:both; width:100%; height:100%; overflow:hidden; position:relative; background-size: cover;}
+		
+		#page1{background-image: url("images/im1.jpg");}
+		#page2{background-image: url("images/im2.jpg");}
+		.lst1 {width: 1000px; margin: 0 auto;}
+		.lst1 li{width: 250px; height: 400px; float: left; overflow: hidden;}
+		.lst1 li a{display: block; background-color: #333; color: #fff; line-height: 400px; opacity: 0; transition: 1.5s; margin-top: 300px;}
+		.lst1 li.item1 a {margin-top: 200px;}
+		.lst1 li.item2 a {margin-top: 200px;}
+		.lst1 li.item3 a {margin-top: 200px;}
+		.lst1 li.item4 a {margin-top: 200px;}
+		.lst1.active li a {opacity: 1; margin-top: 0;}
+		
+        #content { width:100%; height:100%; overflow:hidden; }
+        .visual { display:block; width:100%; height:auto; overflow:hidden; }
+		/*#btn_box1 버튼*/
+		/* #btn_box1{ position:absolute; top:247px; }
+		#btn_box1 a{display:block; width:60px; height:60px; float:left; background-repeat:no-repeat; background-size:100%; margin-right:6px;}
+		#btn_box1 a.slidebtn{background:url("images/but1.gif") no-repeat;}
+		#btn_box1 a.slidebtn.active{background:url("images/but2.gif") no-repeat;}  */
+		.line { height:5px; width:0px; background:#fff;  margin:0 auto; }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script>
+        $(function () {
+			
+			var pgHt = parseInt($(window).height());
+			var pgWd = parseInt($(window).width());
+			
+			$(window).on("mousewheel", function(e){
+				if(e.originalEvent.wheelDelta < 0 && pgWd >= 768){ // && pgWd >= 768 모바일
+				  //아래로 스크롤 할 경우 스크롤한 양의 한페이지만큼 증가
+					$("body, html").not(":animated").animate({scrollTop : "+=" +pgHt+"px"}, 800);
+				} else if (pgWd >= 768) {
+				  //위로 스크롤 할 경우	스크롤한 양의 한페이지만큼 감소
+					$("body, html").not(":animated").animate({scrollTop : "-=" +pgHt+"px"}, 800);
+				}
+			});
+			
+			$(window).scroll(function(){
+				var scTop = parseInt($(window).scrollTop());
+				
+				if(scTop>=pgHt){
+					$("#page1 .lst1").addClass("active");
+				}
+
+			});
+        });
+    </script>
+</head>
+<body>
+	<header id="hd">
+		<nav id="gnb">
+			<ul>
+				<li><a href="">Intro</a></li>
+				<li><a href="">Portfolio</a></li>
+				<li><a href="">Working</a></li>
+				<li><a href="">Contact</a></li>
+			</ul>
+		</nav>
+	</header>
+    <div class="page">
+            <article class="page" id="slider">
+                <div id="banner1">
+                    <a class="img1"><img src="images/vs1.jpg" alt="비주얼01" title="비주얼1"/></a>
+                    <a class="img2"><img src="visual2.png" alt="비주얼02" title="비주얼2" /></a>
+                    <a class="img3"><img src="visual3.png" alt="비주얼03" title="비주얼3" /></a>
+                    <a class="img4"><img src="visual4.png" alt="비주얼04" title="비주얼4" /></a>
+                </div>
+				<div id="btn_box1">
+					<!-- <a class="slidebtn stop"id="stop"></a>
+					<a class="slidebtn play"id="play"></a> -->
+					<a class="slidebtn active"id="btn1"></a>
+					<a class="slidebtn"id="btn2"></a>
+					<a class="slidebtn"id="btn3"></a>
+					<a class="slidebtn"id="btn4"></a>
+					<a class="slidebtn"id="btn5"></a>
+				</div>
+            </article>
+    </div>
+    <div class="page" id="page1">
+    	<ul class="lst1">
+    		<li><a href="" class="col3 item1">데이터1</a></li>
+    		<li><a href="" class="col3 item2">데이터2</a></li>
+    		<li><a href="" class="col3 item3">데이터3</a></li>
+    		<li><a href="" class="col3 item4">데이터4</a></li>
+    	</ul>
+    </div>
+    <div class="page" id="page2"><img src="images/im2.jpg" alt="" class="visual"></div>
+    <div class="page" id="page3"><img src="images/im3.jpg" alt="" class="visual"></div>
+    <div class="page" id="page4"><img src="images/im4.jpg" alt="" class="visual"></div>
+    <div class="page" id="page5"><img src="images/im5.jpg" alt="" class="visual"></div>
+    <div class="page" id="page6"><img src="images/im6.jpg" alt="" class="visual"></div>
+    <div class="page" id="page7"><img src="images/im7.jpg" alt="" class="visual"></div>
+    <div class="page" id="page8"><img src="images/im8.jpg" alt="" class="visual"></div>
+    <div class="page" id="page9"><img src="images/im9.jpg" alt="" class="visual"></div>
+    <div class="page" id="page10"><img src="images/im10.jpg" alt="" class="visual"></div>
+	<p class="page" id="content">
+		In spacecraft operations, The Launch and Early Orbit phase (LEOP) is one of the most critical phases of a mission. Spacecraft operations engineers take control of the
+		satellite after it separates from the launch vehicle up to the time when the satellite is safely positioned in its final orbit.
+		During this period, operations staff works 24 hours a day to activate, monitor and control the various subsystems of the satellite, including the deployment of any 
+		satellite appendages (antennas, solar array, reflector, etc.), and undertake critical orbit and attitude control manoeuvres.
+		For geostationary satellites, the launch vehicle typically carries the spacecraft to Geostationary Transfer Orbit, or GTO. From this elliptical orbit, the LEOP generally 
+		includes a sequence of apogee engine firings to reach the circular geostationary orbit.
+		In spacecraft operations, The Launch and Early Orbit phase (LEOP) is one of the most critical phases of a mission. Spacecraft operations engineers take control of the
+		satellite after it separates from the launch vehicle up to the time when the satellite is safely positioned in its final orbit.
+		During this period, operations staff works 24 hours a day to activate, monitor and control the various subsystems of the satellite, including the deployment of any 
+		satellite appendages (antennas, solar array, reflector, etc.), and undertake critical orbit and attitude control manoeuvres.
+		For geostationary satellites, the launch vehicle typically carries the spacecraft to Geostationary Transfer Orbit, or GTO. From this elliptical orbit, the LEOP generally 
+		includes a sequence of apogee engine firings to reach the circular geostationary orbit.
+		
+		In spacecraft operations, The Launch and Early Orbit phase (LEOP) is one of the most critical phases of a mission. Spacecraft operations engineers take control of the
+		satellite after it separates from the launch vehicle up to the time when the satellite is safely positioned in its final orbit.
+		During this period, operations staff works 24 hours a day to activate, monitor and control the various subsystems of the satellite, including the deployment of any 
+		satellite appendages (antennas, solar array, reflector, etc.), and undertake critical orbit and attitude control manoeuvres.
+		For geostationary satellites, the launch vehicle typically carries the spacecraft to Geostationary Transfer Orbit, or GTO. From this elliptical orbit, the LEOP generally 
+		includes a sequence of apogee engine firings to reach the circular geostationary orbit.
+		In spacecraft operations, The Launch and Early Orbit phase (LEOP) is one of the most critical phases of a mission. Spacecraft operations engineers take control of the
+		satellite after it separates from the launch vehicle up to the time when the satellite is safely positioned in its final orbit.
+		During this period, operations staff works 24 hours a day to activate, monitor and control the various subsystems of the satellite, including the deployment of any 
+		satellite appendages (antennas, solar array, reflector, etc.), and undertake critical orbit and attitude control manoeuvres.
+		For geostationary satellites, the launch vehicle typically carries the spacecraft to Geostationary Transfer Orbit, or GTO. From this elliptical orbit, the LEOP generally 
+		includes a sequence of apogee engine firings to reach the circular geostationary orbit.
+		In spacecraft operations, The Launch and Early Orbit phase (LEOP) is one of the most critical phases of a mission. Spacecraft operations engineers take control of the
+		satellite after it separates from the launch vehicle up to the time when the satellite is safely positioned in its final orbit.
+		During this period, operations staff works 24 hours a day to activate, monitor and control the various subsystems of the satellite, including the deployment of any 
+		satellite appendages (antennas, solar array, reflector, etc.), and undertake critical orbit and attitude control manoeuvres.
+		For geostationary satellites, the launch vehicle typically carries the spacecraft to Geostationary Transfer Orbit, or GTO. From this elliptical orbit, the LEOP generally 
+		includes a sequence of apogee engine firings to reach the circular geostationary orbit.
+		In spacecraft operations, The Launch and Early Orbit phase (LEOP) is one of the most critical phases of a mission. Spacecraft operations engineers take control of the
+		satellite after it separates from the launch vehicle up to the time when the satellite is safely positioned in its final orbit.
+		During this period, operations staff works 24 hours a day to activate, monitor and control the various subsystems of the satellite, including the deployment of any 
+		satellite appendages (antennas, solar array, reflector, etc.), and undertake critical orbit and attitude control manoeuvres.
+		For geostationary satellites, the launch vehicle typically carries the spacecraft to Geostationary Transfer Orbit, or GTO. From this elliptical orbit, the LEOP generally 
+		includes a sequence of apogee engine firings to reach the circular geostationary orbit.
+	</p>
+	
+</body>
+</html>
