@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>»ç¿ëÀÚ È¿°ú</title>
+<title>ì‚¬ìš©ì íš¨ê³¼</title>
 <style>
 #region { 
   position: relative; width: 200px; height:200px;
@@ -22,8 +22,8 @@
 .leftbtn{margin-top:10px;}
 .rightbtn{margin-left:290px;margin-top:10px;}
 </style>
-<!--<script src="https://code.jquery.com/jquery-3.3.1.min.js">  ÃÖ½Å¹öÀü ¸µÅ© </script>-->
-<script src="http://code.jquery.com/jquery-latest.js"></script> <!-- ÃÖ½Å¹öÀüÀ¸·Î ºÒ·¯¿È -->
+<!--<script src="https://code.jquery.com/jquery-3.3.1.min.js">  ìµœì‹ ë²„ì „ ë§í¬ </script>-->
+<script src="http://code.jquery.com/jquery-latest.js"></script> <!-- ìµœì‹ ë²„ì „ìœ¼ë¡œ ë¶ˆëŸ¬ì˜´ -->
 	
 	<style>
 	#rolling_img { position: relative; width: 100%; height: 80px; }
@@ -31,7 +31,7 @@
 	</style>
 <script>
 
-jQuery(function() {
+$(function() {
     var rolling_time = 4000;
     var effect_time = 1000;
  
