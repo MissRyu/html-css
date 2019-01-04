@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>사용자 효과</title>
+<style>
+#region { 
+  position: relative; width: 200px; height:200px;
+  overflow:hidden;  margin:auto;
+}
+#images{
+  width: 100%; height: 80px;
+}
+#images a img { 
+  width:100%; height:80px; 
+  border:0; position: relative;}
+#images a {display: block; width:200px; float: left;}
+	
+#direction {
+  width: 360px;  margin:auto;
+}
+.leftbtn{margin-top:10px;}
+.rightbtn{margin-left:290px;margin-top:10px;}
+</style>
+<!--<script src="https://code.jquery.com/jquery-3.3.1.min.js">  최신버전 링크 </script>-->
+<script src="http://code.jquery.com/jquery-latest.js"></script> <!-- 최신버전으로 불러옴 -->
+	
+	<style>
+	#rolling_img { position: relative; width: 100%; height: 80px; }
+	#rolling_img img { position: absolute; top:0; left:0; }
+	</style>
+<script>
+
+jQuery(function() {
+    var rolling_time = 4000;
+    var effect_time = 1000;
+ 
+    var $rolling_img = $("#rolling_img > img");
+    $rolling_img.not(":first").hide();
+ 
+    setInterval(rolling, rolling_time);
+ 
+    function rolling()
+    {
+        $visible_img = $rolling_img.filter(":visible");
+        $visible_img.fadeOut(effect_time);
+ 
+        $next_img = $visible_img.next();
+        if ($next_img.length === 0) {
+            $next_img = $rolling_img.filter(":first");
+        }
+        $next_img.fadeIn(effect_time);
+    }
+});
+</script>
+</head>
+<body>
+	
+<div id="rolling_img"> 
+			<img src="http://www.factk.com/image/logo/toplogo_20181231095141.png" />
+			<img src="http://www.dronenews.or.kr//image/logo/toplogo_20180413093304.png" />
+</div> 
+
+</body>
+</html>
