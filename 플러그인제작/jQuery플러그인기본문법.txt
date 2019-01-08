@@ -1,0 +1,14 @@
+(function( $ ){ 
+    $.fn.extend({
+	메서드1 : function (options) {
+		실행내용;
+	},
+	메서드2 : function (options) {
+		실행내용;
+	},
+	메서드3 : function (options) {
+		실행내용;
+	}
+    });
+event.preventDefault();
+}) (jQuery);
