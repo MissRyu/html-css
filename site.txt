@@ -1,3 +1,4 @@
+http://brackets.io/
 http://tcpschool.com/
 https://nodejs.org/ko/download/
 http://jquery.com/
