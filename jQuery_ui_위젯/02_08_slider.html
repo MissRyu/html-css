@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>jQuery UI Slider - Default functionality</title>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  <link rel="stylesheet" href="jui.css" />
+  <script>
+      $(function(){
+         $("#slider").slider({value:60});
+         $("#slider2").slider({values:[40,70]}); // 두개이상
+      });
+  </script>
+</head>
+<body>
+ 
+<div id="slider"></div>
+<div id="slider2"></div>
+ 
+</body>
+</html>
